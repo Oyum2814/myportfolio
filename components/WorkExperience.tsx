@@ -11,7 +11,7 @@ type Props = {}
 function WorkExperience({}: Props) {
   return (
     <div className="flex justify-center items-center h-screen max-w-full relative">
-      <h3 className="absolute top-24 uppercase tracking-[20px] text-gray-500 text-2xl">
+      <h3 className="absolute top-10 sm:top-24 uppercase tracking-[15px] md:tracking-[20px] text-gray-500 text-2xl">
         Experience
       </h3>
       <Swiper
