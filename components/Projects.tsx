@@ -19,7 +19,7 @@ function Projects({}: Props) {
                         <img
                         className="mt-20 md:mt-0 w-[100px] h-auto" 
                         src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png"
-                        alt="project" />
+                        alt="project asset" />
                         <div className="snap-center space-y-10 px-0 md:px-10 max-w-6xl">
                             <h4 className="text-xl sm:text-3xl font-semibold text-center">
                                 <span className="underline decoration-[#FFFFFF]/50">
