@@ -5,7 +5,7 @@ import { EffectCreative } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/effect-creative';
-import {FaAngleDoubleLeft} from 'react-icons/fa'
+import {FaAngleDoubleRight} from 'react-icons/fa'
 type Props = {}
 
 function WorkExperience({}: Props) {
@@ -44,7 +44,7 @@ function WorkExperience({}: Props) {
           duration:2.5
         }}
         className="absolute right-0 top-[50%] px-2 lg:px-4 animate-bounce text-2xl lg:text-3xl">
-          <FaAngleDoubleLeft color="white"/>
+          <FaAngleDoubleRight color="white"/>
         </motion.div>
       </Swiper>
     </motion.div>
