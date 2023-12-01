@@ -10,7 +10,7 @@ type Props = {}
 
 function WorkExperience({}: Props) {
   return (
-    <div className="flex justify-center items-center h-screen max-w-full relative">
+    <motion.div className="flex justify-center items-center h-screen overflow-y-hidden max-w-full relative">
       <h3 className="absolute top-10 sm:top-24 uppercase tracking-[15px] md:tracking-[20px] text-gray-500 text-2xl">
         Experience
       </h3>
@@ -47,7 +47,7 @@ function WorkExperience({}: Props) {
           <FaAngleDoubleLeft color="white"/>
         </motion.div>
       </Swiper>
-    </div>
+    </motion.div>
     // <motion.div
     // initial={{opacity:0}}
     // whileInView={{opacity:1}}

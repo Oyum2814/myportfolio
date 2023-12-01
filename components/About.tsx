@@ -4,7 +4,11 @@ type Props = {}
 
 export default function About({}: Props) {
   return (
-    <div className="flex flex-col relative h-screen text-center md:text-left md:flex-row max-w-7xl px-10 justify-evenly items-center">
+    <motion.div 
+    initial={{opacity:0}}
+    whileInView={{opacity:1}}
+    transition={{duration:1.5}}
+    className="flex flex-col relative h-screen text-center md:text-left md:flex-row max-w-7xl px-10 space-y-8 justify-center items-center">
         <h3 className="absolute top-10 sm:top-24 uppercase tracking-[20px] text-gray-500 text-2xl">
             About
         </h3>
@@ -22,11 +26,13 @@ export default function About({}: Props) {
         }}
         viewport={{once:true}}
         src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png"
-        className="mt-20 md:mt-0 flex-shrink-0 w-[150px] h-[150px] rounded-full object-cover 
-        md:rounded-lg md:w-64 md:h-95 xl:h-[498px] xl:w-[280px]"
+        className="mt-20 md:mt-0 flex-shrink-0 w-[80px] h-[80px] rounded-full object-cover
+        sm:w-[150px] sm:h-[150px]  
+        md:rounded-lg md:w-64 md:h-95
+        xl:h-[498px] xl:w-[280px]"
         />
         <div className="space-y-10 px-0 md:px-10">
-            <h4 className="text-2xl md:text-4xl font-semibold">
+            <h4 className="text-2xl md:text-3xl font-semibold">
                 Here is a little background
             </h4>
             <p className="text-sm max-w-xl">
@@ -37,6 +43,6 @@ export default function About({}: Props) {
             remaining essentially unchanged.
             </p>
         </div>
-    </div>
+    </motion.div>
   )
 }
