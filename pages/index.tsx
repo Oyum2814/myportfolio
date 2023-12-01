@@ -1,0 +1,38 @@
+import About from '@/components/About'
+import Header from '@/components/Header'
+import Hero from '@/components/Hero'
+import Skills from '@/components/Skills'
+import WorkExperience from '@/components/WorkExperience'
+import Head from 'next/head'
+
+export default function Home() {
+  return (
+    <div className="bg-white text-black dark:bg-black dark:text-white h-screen snap-y snap-mandatory overflow-scroll scroll-smooth z-0">
+      <Head>
+        <title>Om Mukherjee</title>
+      </Head>
+      {/* Header Section */}
+      <Header />
+      {/* Hero Section  */}
+      <section id="hero" className="snap-center">
+        <Hero />
+      </section> 
+      {/* About Section  */}
+      <section id="about"
+      className="snap-center">
+        <About />
+      </section>
+      {/* Experience Section  */}
+      <section id="experience" className="snap-center">
+        <WorkExperience />
+      </section>
+      {/* Skills Section  */}
+      <section id="skills" className="snap-center">
+        <Skills />
+      </section>
+      {/* Project Section */}
+
+      {/* Contact Me Section  */}
+    </div>
+  )
+}
