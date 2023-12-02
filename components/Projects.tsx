@@ -34,6 +34,17 @@ function Projects({projects}: Props) {
                                 </span>{" "}
                                 {project?.title}
                             </h4>
+                            <div className="flex items-center space-x-2 justify-center">
+                                {project?.technologies.map((technology)=>(
+                                    <img 
+                                    key={technology._id}
+                                    src={urlFor(technology.image).url()}
+                                    alt="stack"
+                                    className="h-10 w-10 "
+                                    />
+                                ))}
+                            </div>
+                           
                             <p className="w-full text-sm text-center md:text-left">
                                 {project?.summary}
                             </p>
