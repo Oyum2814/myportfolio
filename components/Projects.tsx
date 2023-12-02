@@ -1,10 +1,12 @@
 import React from 'react'
 import {motion} from 'framer-motion'
-type Props = {}
+import { Project } from '@/typings';
+import { urlFor } from '@/sanity';
+type Props = {
+    projects:Project[];
+}
 
-function Projects({}: Props) {
-    const projects = [1,2,3,4,5];
-
+function Projects({projects}: Props) {
     return (
         <motion.div className="h-screen flex flex-col relative text-center  md:text-left xl:flex-row max-w-[2000px] 
         xl:px-10 min-h-screen justify-center xl:space-y-0 mx-auto items-center">
@@ -22,21 +24,18 @@ function Projects({}: Props) {
                         transition={{duration:1.2}}
                         whileInView={{y:0,opacity:1}}
                         viewport={{once:true}}
-                        className="mt-20 md:mt-0 w-[100px] h-auto" 
-                        src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png"
+                        className="mt-20 md:mt-0 w-[600px] h-auto" 
+                        src={urlFor(project?.image).url()}
                         alt="project asset" />
                         <div className="snap-center space-y-10 px-0 md:px-10 max-w-6xl">
                             <h4 className="text-xl sm:text-3xl font-semibold text-center">
                                 <span className="underline decoration-[#FFFFFF]/50">
                                     Case Study {i+1} of {projects.length} :
-                                </span>UPS Clone
+                                </span>{" "}
+                                {project?.title}
                             </h4>
                             <p className="w-full text-sm text-center md:text-left">
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem 
-                                Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer
-                                took a galley of type and scrambled it to make a type specimen book.
-                                It has survived not only five centuries, but also the leap into electronic typesetting, 
-                                remaining essentially unchanged.
+                                {project?.summary}
                             </p>
                         </div>
                     </div>
