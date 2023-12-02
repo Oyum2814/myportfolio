@@ -7,9 +7,6 @@ const query = groq`
 `
 export const fetchSkills = async()=>{
     const res = await sanityClient.fetch(query);
-
-    const data = await res.json();
-    const skills:Skill[] = data.skills;
-    
+    const skills:Skill[] = res;
     return skills; 
 }

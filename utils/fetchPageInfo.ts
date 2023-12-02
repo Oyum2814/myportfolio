@@ -8,8 +8,7 @@ const query = groq`
 
 export const fetchPageInfo = async()=>{
     const res = await sanityClient.fetch(query);
-    const data = await res.json();
-    const pageInfo:PageInfo = data.pageInfo;
+    const pageInfo:PageInfo = res;
     
     return pageInfo; 
 }
