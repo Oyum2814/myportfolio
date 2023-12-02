@@ -1,8 +1,12 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-type Props = {}
+import { PageInfo } from '@/typings'
+import { urlFor } from '@/sanity';
+type Props = {
+    pageInfo:PageInfo;
+}
 
-export default function About({}: Props) {
+export default function About({pageInfo}: Props) {
   return (
     <motion.div 
     initial={{opacity:0}}
@@ -25,22 +29,18 @@ export default function About({}: Props) {
             x:0
         }}
         viewport={{once:true}}
-        src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png"
-        className="mt-20 md:mt-0 flex-shrink-0 w-[80px] h-[80px] rounded-full object-cover
+        src={urlFor(pageInfo?.profilePic).url()}
+        className="mt-20 md:mt-0 flex-shrink-0 w-[150px] h-[150px] rounded-full object-cover
         sm:w-[150px] sm:h-[150px]  
         md:rounded-lg md:w-64 md:h-95
         xl:h-[498px] xl:w-[280px]"
         />
         <div className="space-y-10 px-0 md:px-10">
             <h4 className="text-2xl md:text-3xl font-semibold">
-                Here is a little background
+                Who am I?
             </h4>
             <p className="text-sm max-w-xl">
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-            Lorem Ipsum has been the industry standard dummy text ever since the 1500s, 
-            when an unknown printer took a galley of type and scrambled it to make a type specimen book.\
-            It has survived not only five centuries, but also the leap into electronic typesetting,
-            remaining essentially unchanged.
+                {pageInfo?.backgroundInformation}
             </p>
         </div>
     </motion.div>
