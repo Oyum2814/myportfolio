@@ -40,6 +40,7 @@ function WorkExperience({}: Props) {
         whileInView={{
           opacity:[0,1],
         }}
+        viewport={{once:true}}
         transition={{
           duration:2.5
         }}

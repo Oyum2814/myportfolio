@@ -8,7 +8,8 @@ import Head from 'next/head'
 
 export default function Home() {
   return (
-    <div className="bg-white text-black dark:bg-black dark:text-white h-screen snap-y snap-mandatory overflow-scroll scroll-smooth z-0">
+    <div className="bg-white text-black dark:bg-black dark:text-white h-screen snap-y snap-mandatory
+    overflow-y-scroll scroll-smooth z-0 scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-white/60">
       <Head>
         <title>Om Mukherjee</title>
       </Head>
