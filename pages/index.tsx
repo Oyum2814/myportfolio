@@ -6,11 +6,11 @@ import WorkExperience from '@/components/WorkExperience'
 import Head from 'next/head'
 import {GetStaticProps} from 'next'
 import { Experience, PageInfo, Project, Skill, Social } from '@/typings'
-import {UsePageInfo} from '@/utils/usePageInfo'
-import {UseExperiences} from '@/utils/useExperiences'
-import {UseSkills} from '@/utils/useSkills'
-import {UseProjects} from '@/utils/useProjects'
-import {UseSocials} from '@/utils/useSocials'
+import {fetchPageInfo} from '@/utils/fetchPageInfo'
+import {fetchExperiences} from '@/utils/fetchExperiences'
+import {fetchSkills} from '@/utils/fetchSkills'
+import {fetchProjects} from '@/utils/fetchProjects'
+import {fetchSocials} from '@/utils/fetchSocials'
 
 type Props = {
   pageInfo:PageInfo;
@@ -53,14 +53,15 @@ const Home =  ({pageInfo,experiences,projects,skills,socials}:Props) =>{
     </div>
   );
 };
+
 export default Home;
 
 export const getStaticProps: GetStaticProps<Props> = async ()=>{
-  const pageInfo: PageInfo = await UsePageInfo();
-  const experiences:Experience[] = await UseExperiences();
-  const skills:Skill[] = await UseSkills();
-  const projects:Project[] = await UseProjects();
-  const socials:Social[] = await UseSocials();
+  const pageInfo: PageInfo = await fetchPageInfo();
+  const experiences:Experience[] = await fetchExperiences();
+  const skills:Skill[] = await fetchSkills();
+  const projects:Project[] = await fetchProjects();
+  const socials:Social[] = await fetchSocials();
 
   return {
     props:{
