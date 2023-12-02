@@ -16,8 +16,8 @@ function ExperienceCard({experience}: Props) {
             <h4 className="font-light text-3xl  text-center">{experience?.jobTitle}</h4>
             <p className="font-bold text-2xl text-center uppercase">{experience?.company}</p>
             <div className="flex space-x-4 justify-center py-2">
-                {experience.technologies.map((technology)=>(
-                    <img src={urlFor(technology.image).url()} alt="stack"
+                {experience.technologies.map((technology,i)=>(
+                    <img key={i} src={urlFor(technology.image).url()} alt="stack"
                     className="h-10 w-10 rounded-full "
                     />
                 ))}
