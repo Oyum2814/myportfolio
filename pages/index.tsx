@@ -17,10 +17,9 @@ type Props = {
   experiences:Experience[];
   skills:Skill[];
   projects:Project[];
-  socials:Social[];
 }
 
-const Home =  ({pageInfo,experiences,projects,skills,socials}:Props) =>{
+const Home =  ({pageInfo,experiences,projects,skills}:Props) =>{
   return (  
     <div className="bg-white text-black dark:bg-black dark:text-white h-screen snap-y snap-mandatory
     overflow-y-scroll scroll-smooth z-0 scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-white/60">
@@ -61,7 +60,6 @@ export const getStaticProps: GetStaticProps<Props> = async ()=>{
   const experiences:Experience[] = await fetchExperiences();
   const skills:Skill[] = await fetchSkills();
   const projects:Project[] = await fetchProjects();
-  const socials:Social[] = await fetchSocials();
 
   return {
     props:{
@@ -69,7 +67,6 @@ export const getStaticProps: GetStaticProps<Props> = async ()=>{
       experiences,
       skills,
       projects,
-      socials,
     },
     revalidate:100,
   };
