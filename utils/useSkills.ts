@@ -1,6 +1,6 @@
 import {Skill} from '../typings'
 
-export const useSkills = async()=>{
+export const UseSkills = async()=>{
     const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/skills`);
 
     const data = await res.json();
