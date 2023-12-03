@@ -8,7 +8,7 @@ type Props = {
 
 function ExperienceCard({experience}: Props) {
   return (
-    <article className="flex flex-col items-center w-full flex-shrink-0 snap-center bg-neutral-900 h-full  p-10 space-y-5 justify-center ">
+    <article className="flex flex-col items-center w-full flex-shrink-0 snap-center bg-neutral-900 h-full  p-10 space-y-3 justify-center ">
         <img src={urlFor(experience?.companyImage).url()}
         alt="Profile Picture"
         className="rounded-full h-24 w-24"/>
