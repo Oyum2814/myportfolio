@@ -1,17 +1,21 @@
 import { motion } from 'framer-motion'
-import React from 'react'
+import React, { useRef, useState } from 'react'
 import ExperienceCard from './ExperienceCard'
 import { EffectCreative } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/effect-creative';
-import {FaAngleDoubleRight} from 'react-icons/fa'
+import {FaAngleDoubleRight, FaAngleDoubleLeft} from 'react-icons/fa'
 import { Experience } from '@/typings';
+import type SwiperCore from 'swiper';
+
 type Props = {
   experiences:Experience[];
 };
 
 function WorkExperience({experiences}: Props) {
+  const [eof,useEof] = useState(false);
+  const swiperRef = useRef<SwiperCore>();
   return (
     <motion.div className="flex justify-center items-center h-screen overflow-y-hidden max-w-full relative">
       <h3 className="absolute top-10 sm:top-24 uppercase tracking-[15px] md:tracking-[20px] text-gray-500 text-2xl">
@@ -29,6 +33,9 @@ function WorkExperience({experiences}: Props) {
             translate: ['100%', 0, 0],
           },
         }}
+        onBeforeInit={(swiper) => {
+          swiperRef.current = swiper
+        }}
         modules={[EffectCreative]}
         className="mySwiper"
       >
@@ -37,20 +44,36 @@ function WorkExperience({experiences}: Props) {
             <ExperienceCard experience={experience}/>
           </SwiperSlide>
         ))}
-        <motion.div
-        initial={{
-          opacity:0,
-        }}
-        whileInView={{
-          opacity:[0,1],
-        }}
-        viewport={{once:true}}
-        transition={{
-          duration:2.5
-        }}
-        className="absolute right-0 top-[50%] px-2 lg:px-4 animate-bounce text-2xl lg:text-3xl">
-          <FaAngleDoubleRight color="white"/>
-        </motion.div>
+        {eof
+        ?(
+          <div
+          onClick={() => {
+            swiperRef.current?.slidePrev();
+            if(swiperRef.current?.activeIndex === 0)
+            {
+              useEof(false);
+            }
+          }}
+          className="absolute right-0 top-[50%] px-2 lg:px-4 animate-bounce text-2xl lg:text-3xl z-40">
+            <FaAngleDoubleLeft color="white" />
+          </div>
+        ):
+        (
+          <div
+          onClick={() => {
+            swiperRef.current?.slideNext();
+            if(swiperRef.current?.activeIndex == experiences.length-1)
+            {
+              useEof(true);
+            }
+          }}
+          className="absolute right-0 top-[50%] px-2 lg:px-4 animate-bounce text-2xl lg:text-3xl z-40">
+            <FaAngleDoubleRight color="white" />
+          </div>
+        )
+        }
+        
+        
       </Swiper>
     </motion.div>
     // <motion.div
