@@ -14,7 +14,7 @@ type Props = {
 };
 
 function WorkExperience({experiences}: Props) {
-  const [eof,useEof] = useState(false);
+  const [eof,setEof] = useState(false);
   const swiperRef = useRef<SwiperCore>();
   return (
     <motion.div className="flex justify-center items-center h-screen overflow-y-hidden max-w-full relative">
@@ -51,7 +51,7 @@ function WorkExperience({experiences}: Props) {
             swiperRef.current?.slidePrev();
             if(swiperRef.current?.activeIndex === 0)
             {
-              useEof(false);
+              setEof(false);
             }
           }}
           className="absolute right-0 top-[50%] px-2 lg:px-4 animate-bounce text-2xl lg:text-3xl z-40">
@@ -64,7 +64,7 @@ function WorkExperience({experiences}: Props) {
             swiperRef.current?.slideNext();
             if(swiperRef.current?.activeIndex == experiences.length-1)
             {
-              useEof(true);
+              setEof(true);
             }
           }}
           className="absolute right-0 top-[50%] px-2 lg:px-4 animate-bounce text-2xl lg:text-3xl z-40">
