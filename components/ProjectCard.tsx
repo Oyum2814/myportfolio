@@ -10,14 +10,9 @@ type Props = {
 
 function ProjectCard({project,projects}: Props) {
   return (
-    <div className="flex flex-col w-full  items-center justify-center  h-full ">
-        <motion.img
-        fetchPriority="high"
-        initial={{y:-300,opacity:0}}
-        transition={{duration:1.2}}
-        whileInView={{y:0,opacity:1}}
-        viewport={{once:true}}
-        className="mt-20 md:mt-0 w-[600px] h-auto" 
+    <div className="flex flex-col w-full  items-center justify-start  h-full ">
+        <img
+        className="mt-10 md:mt-0 h-[120px] md:h-[200px] xl:h-[300px] w-auto flex-shrink-0" 
         src={urlFor(project?.image).url()}
 
         alt="project asset" />
