@@ -10,7 +10,7 @@ type Props = {
 
 function ProjectCard({project,projects}: Props) {
   return (
-    <div className="flex flex-col w-full  items-center justify-start  h-full ">
+    <div className="text-black dark:text-white flex flex-col w-full  items-center justify-start  h-full ">
         <Image
         className="mt-10 md:mt-0 h-[120px] md:h-[200px] xl:h-[300px] w-auto flex-shrink-0" 
         src={urlFor(project?.image).url()}
