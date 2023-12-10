@@ -1,6 +1,5 @@
 import { urlFor } from '@/sanity';
 import { Project } from '@/typings';
-import { motion } from 'framer-motion';
 import React from 'react'
 import Image from 'next/image'
 
@@ -15,14 +14,14 @@ function ProjectCard({project,projects}: Props) {
         <Image
         className="mt-10 md:mt-0 h-[120px] md:h-[200px] xl:h-[300px] w-auto flex-shrink-0" 
         src={urlFor(project?.image).url()}
-        loading="eager"
+        loading="lazy"
         alt="project asset"
         height={60}
         width={80}
          />
         <div className="px-0 md:px-10 max-w-6xl flex flex-col justify-center items-center">
             <h2 className="text-xl py-4 sm:text-3xl font-semibold text-center mx-auto w-full uppercase underline cursor-pointer">
-                <a href={project?.linktoBuild} className="decoration-none">
+                <a  href={`${project?.linkToBuild}`} className="decoration-none" target="#" rel="noreferrer">
                     {project?.title}
                 </a>
             </h2>

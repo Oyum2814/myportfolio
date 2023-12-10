@@ -4,6 +4,7 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head />
+      <link rel="icon" href="@/public/favicon.ico" sizes="any" />
       <body>
         <Main />
         <NextScript />

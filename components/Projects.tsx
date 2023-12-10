@@ -2,7 +2,7 @@ import React from 'react'
 import {motion} from 'framer-motion'
 import { Project } from '@/typings';
 import { urlFor } from '@/sanity';
-import  {Navigation, Pagination } from 'swiper/modules';
+import  {Autoplay, Navigation, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import 'swiper/css';
@@ -25,12 +25,16 @@ function Projects({projects}: Props) {
                 <Swiper
                     spaceBetween={30}
                     centeredSlides={true}
+                    autoplay={{
+                        delay: 7500,
+                        disableOnInteraction: false,
+                    }}
                     pagination={{
                     clickable: true,
                     dynamicBullets: true,
                     }}
                     navigation={true}
-                    modules={[Pagination, Navigation]}
+                    modules={[Autoplay, Pagination, Navigation]}
                     className="mySwiper"
                 >
                     {projects.map((project,i)=>(

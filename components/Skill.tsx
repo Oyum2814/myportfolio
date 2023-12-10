@@ -14,7 +14,7 @@ function Skill({skill,directionLeft}: Props) {
         initial={{
             opacity:0,
         }}
-        transition={{duration:1}}
+        transition={{duration:0.5}}
         whileInView={{opacity:1}}
         className="rounded-full border border-neutral-300 object-cover w-16 h-16 xl:h-24 xl:w-24
         filter group-hover:grayscale transition duration-300 ease-in-out"
