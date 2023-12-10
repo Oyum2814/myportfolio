@@ -2,6 +2,7 @@ import { urlFor } from '@/sanity';
 import { Project } from '@/typings';
 import { motion } from 'framer-motion';
 import React from 'react'
+import Image from 'next/image'
 
 type Props = {
     project:Project;
@@ -11,18 +12,24 @@ type Props = {
 function ProjectCard({project,projects}: Props) {
   return (
     <div className="flex flex-col w-full  items-center justify-start  h-full ">
-        <img
+        <Image
         className="mt-10 md:mt-0 h-[120px] md:h-[200px] xl:h-[300px] w-auto flex-shrink-0" 
         src={urlFor(project?.image).url()}
-
-        alt="project asset" />
-        <div className="px-0 md:px-10 max-w-6xl">
-            <h4 className="text-xl py-4 sm:text-3xl font-semibold text-center uppercase">
-                {project?.title}
-            </h4>
-            <div className="flex items-center space-x-2 justify-center">
+        loading="eager"
+        alt="project asset"
+        height={60}
+        width={80}
+         />
+        <div className="px-0 md:px-10 max-w-6xl flex flex-col justify-center items-center">
+            <h2 className="text-xl py-4 sm:text-3xl font-semibold text-center mx-auto w-full uppercase underline cursor-pointer">
+                <a href={project?.linktoBuild} className="decoration-none">
+                    {project?.title}
+                </a>
+            </h2>
+            <div className="flex items-center space-x-2 justify-center cursor-pointer">
                 {project?.technologies.map((technology)=>(
                     <img 
+                    title = {technology?.title}
                     key={technology._id}
                     src={urlFor(technology.image).url()}
                     alt="stack"

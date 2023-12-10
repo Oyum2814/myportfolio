@@ -2,7 +2,7 @@ import React from 'react'
 import {motion} from 'framer-motion'
 import { Project } from '@/typings';
 import { urlFor } from '@/sanity';
-import { Autoplay, Navigation, Pagination } from 'swiper/modules';
+import  {Navigation, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import 'swiper/css';
@@ -16,7 +16,7 @@ type Props = {
 function Projects({projects}: Props) {
     return (
         <motion.div className="h-screen flex flex-col relative text-center  md:text-left xl:flex-row max-w-[2000px] 
-        xl:px-10 min-h-screen justify-center xl:space-y-0 mx-auto items-center">
+        xl:px-10  justify-center xl:space-y-0 mx-auto items-center">
             <h3 className="absolute top-10 sm:top-24 uppercase tracking-[20px] text-gray-500 text-2xl">
                 Projects
             </h3>
@@ -25,16 +25,12 @@ function Projects({projects}: Props) {
                 <Swiper
                     spaceBetween={30}
                     centeredSlides={true}
-                    autoplay={{
-                    delay: 2500,
-                    disableOnInteraction: false,
-                    }}
                     pagination={{
                     clickable: true,
                     dynamicBullets: true,
                     }}
                     navigation={true}
-                    modules={[Autoplay, Pagination, Navigation]}
+                    modules={[Pagination, Navigation]}
                     className="mySwiper"
                 >
                     {projects.map((project,i)=>(

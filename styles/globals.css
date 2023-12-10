@@ -13,9 +13,9 @@
 }
   
 .swiper-slide {
-    @apply flex items-center justify-center text-white mx-auto;
+    @apply flex items-center justify-center h-auto text-white mx-auto;
 }
 
 .swiper-horizontal > .swiper-pagination-bullets.swiper-pagination-bullets-dynamic .swiper-pagination-bullet, .swiper-pagination-horizontal.swiper-pagination-bullets.swiper-pagination-bullets-dynamic .swiper-pagination-bullet {
-    @apply bg-white
+    @apply bg-white h-3 w-3;
 }

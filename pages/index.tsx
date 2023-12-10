@@ -24,7 +24,8 @@ const Home =  ({pageInfo,experiences,projects,skills}:Props) =>{
     <div className="bg-white text-black dark:bg-black dark:text-white h-screen snap-y snap-mandatory
     overflow-y-scroll scroll-smooth z-0 scrollbar scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-white/60">
       <Head>
-        <title>Om Mukherjee</title>
+        <title>Om Mukherjee - Portfolio</title>
+        <meta name="description" content="Portfolio of Om Mukherjee"></meta>
       </Head>
       {/* Header Section */}
       {/* Hero Section  */}
